@@ -87,5 +87,3 @@ if __name__ == '__main__':
             print("Kindly try a valid input.")
             engine.say("Kindly try a valid input.")
             engine.runAndWait()
-
-# Hello World
