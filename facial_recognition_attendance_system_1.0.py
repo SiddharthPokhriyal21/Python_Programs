@@ -4,6 +4,7 @@ import face_recognition
 import csv
 from datetime import datetime
 
+
 video_capture = cv2.VideoCapture(0)
 
 images = []
