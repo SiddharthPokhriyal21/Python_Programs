@@ -17,7 +17,7 @@ if __name__ == '__main__':
         print("What do you want to do?")
         engine.say("What do you want to do?")
         engine.runAndWait()
-        x = int(input("Press 1 to merge PDFs.\nPress 2 to convert a Word file to a PDF.\nPress 3 to convert an PowerPoint presentation to a PDF. (Under progress)\nPress 4 to convert an Excel sheet to a PDF. (Under progress)\nPress 0 to exit.\n"))
+        x = int(input("Enter 1 to merge PDFs.\nEnter 2 to convert a Word file to a PDF.\nEnter 3 to convert an PowerPoint presentation to a PDF. (Under progress)\nEnter 4 to convert an Excel sheet to a PDF. (Under progress)\nEnter 0 to exit.\n"))
 
         if x == 0:
             print('Thank you!')

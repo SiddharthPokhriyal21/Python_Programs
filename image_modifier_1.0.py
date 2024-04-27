@@ -14,7 +14,7 @@ if __name__ == '__main__':
         print("What do you want to do?")
         engine.say("What do you want to do?")
         engine.runAndWait()
-        x = int(input("Press 1 for Image Resizing.\nPress 2 for Image Quality Enhancement.\nPress 0 to exit.\n"))
+        x = int(input("Enter 1 for Image Resizing.\nEnter 2 for Image Quality Enhancement.\nEnter 0 to exit.\n"))
 
         if x == 0:
             print('Thank you!')
