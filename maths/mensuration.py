@@ -81,6 +81,9 @@ class Triangle:
 
 
 class Parallelogram:
+    def perimeter(side1, side2):
+        return 2*(side1 + side2)
+    
     def area(base, height):
         return base*height
     
@@ -89,11 +92,27 @@ class Parallelogram:
 
 
 class Rhombus:
-    pass
+    def perimeter(side):
+        return 4*side
+    
+    def area(diagonal1, diagonal2):
+        return (1/2)*diagonal1*diagonal2
 
 
 class Trapezium:
-    pass
+    def perimeter(side1, side2, side3, side4):
+        return side1 + side2 + side3 + side4
+    
+    def area(side1, side2, height):
+        return (1/2)*(side1 + side2)*height
+
+
+class Kite:
+    def perimeter(shorterSide, longerSide):
+        return 2*(shorterSide + longerSide)
+    
+    def area(diagonal1, diagonal2):
+        return (1/2)*diagonal1*diagonal2
 
 
 class Cube:
