@@ -41,21 +41,19 @@ if __name__ == "__main__":
             x = int(input("Enter 1 for yes and 2 for no.\nEnter 0 to go back.\n"))
             if x == 1:
                 openai.api_key = "sk-proj-9ALXEfVlHrzLDTSLiv6MT3BlbkFJldgCEgAS5kHcL45Qd7Ev"
-                model_engine = "text-davinci-003"
                 content = w_dict["articles"][i]["url"]
                 prompt = f"Summarize the given news for me in a paragraph.\n{content}"
-                
-                # completion = openai.Completion.create(
-                #     engine = model_engine,
-                #     prompt = prompt,
-                #     max_tokens = 1024,
-                #     n = 1,
-                #     stop = None,
-                #     temperature = 0.5
-                # )
-
-                # response = completion.choices[0].text
-                # print(response)
+                messages = []
+                message = f"Provide a precis on the news article in the given URL: {content}"
+                messages.append({"role": "user", "content": message})
+                response = openai.ChatCompletion.create(
+                    model = "gpt-3.5-turbo",
+                    messages = messages)
+                reply = response["choices"][0]["message"]["content"]
+                messages.append({"role": "assistant", "content": reply})
+                print('\n' + reply + '\n')
+                speaker.say(reply)
+                speaker.runAndWait()
             
             elif x == 2:
                 continue
