@@ -148,15 +148,39 @@ class Cuboid:
         return math.sqrt(length**2 + breadth**2 + height**2)
 
 class Sphere:
-    pass
+    def surfaceArea(radius):
+        return 4*PI*radius*radius
+    
+    def volume(radius):
+        return (4/3)*PI*radius**3
 
+class Hemisphere:
+    def surfaceArea(radius):
+        return 2*PI*radius*radius
+    
+    def volume(radius):
+        return (2/3)*PI*radius**3
 
 class Cone:
-    pass
+    def surfaceArea(radius, height):
+        return 2*PI*radius*(height + radius)
+    
+    def curvedSurfaceArea(radius, height):
+        return 2*PI*radius*height
+
+    def volume(radius, height):
+        return (1/3)*PI*radius*radius*height
 
 
 class Cylinder:
-    pass
+    def surfaceArea(radius, height):
+        return 2*PI*radius*(height + radius)
+    
+    def curvedSurfaceArea(radius, height):
+        return 2*PI*radius*height
+
+    def volume(radius, height):
+        return PI*radius*radius*height
 
 
 class Frustum:
