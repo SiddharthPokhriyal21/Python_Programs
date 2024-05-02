@@ -25,6 +25,7 @@ class Rectangle:
     def diagonal(length, breadth):
         return math.sqrt(length**2 + breadth**2)
 
+
 class Circle:
     def deg2rad(degree):
         return degree*PI/180
@@ -131,6 +132,7 @@ class Cube:
     def diagonal3D(side):
         return math.sqrt(3)*side
 
+
 class Cuboid:
     def surfaceArea(length, breadth, height):
         return 2*(length*breadth + breadth*height + height*length)
@@ -147,33 +149,13 @@ class Cuboid:
     def diagonal3D(length, breadth, height):
         return math.sqrt(length**2 + breadth**2 + height**2)
 
-class Sphere:
-    def surfaceArea(radius):
-        return 4*PI*radius*radius
-    
-    def volume(radius):
-        return (4/3)*PI*radius**3
-
-class Hemisphere:
-    def surfaceArea(radius):
-        return 2*PI*radius*radius
-    
-    def volume(radius):
-        return (2/3)*PI*radius**3
-
-class Cone:
-    def surfaceArea(radius, height):
-        return 2*PI*radius*(height + radius)
-    
-    def curvedSurfaceArea(radius, height):
-        return 2*PI*radius*height
-
-    def volume(radius, height):
-        return (1/3)*PI*radius*radius*height
 
 
 class Cylinder:
-    def surfaceArea(radius, height):
+    def diagonal(radius, height):
+        return ((2*radius)**2 + height**2)**0.5
+
+    def totalSurfaceArea(radius, height):
         return 2*PI*radius*(height + radius)
     
     def curvedSurfaceArea(radius, height):
@@ -183,5 +165,55 @@ class Cylinder:
         return PI*radius*radius*height
 
 
+class Cone:
+    def slantHeight(radius, height):
+        return (height**2 + radius**2)**0.5
+    
+    def totalSurfaceArea(radius, slantHeight):
+        return PI*radius*(slantHeight + radius)
+    
+    def curvedSurfaceArea(radius, slantHeight):
+        return PI*radius*slantHeight
+
+    def volume(radius, height):
+        return (1/3)*PI*radius*radius*height
+
+
 class Frustum:
+    def slantHeight(baseRadius, topRadius, height):
+        return (height**2 + (baseRadius - topRadius)**2)**0.5
+    
+    def totalSurfaceArea(baseRadius, topRadius, slantHeight):
+        return PI*slantHeight*(baseRadius + topRadius) + PI*baseRadius**2 + PI*topRadius**2
+    
+    def curvedSurfaceArea(baseRadius, topRadius, slantHeight):
+        return PI*slantHeight*(baseRadius + topRadius)
+    
+    def volume(baseRadius, topRadius, height):
+        return (1/3)*PI*height*(baseRadius**2 + baseRadius*topRadius + topRadius**2)
+
+
+class Sphere:
+    def surfaceArea(radius):
+        return 4*PI*radius*radius
+    
+    def volume(radius):
+        return (4/3)*PI*radius**3
+
+
+class Hemisphere:
+    def surfaceArea(radius):
+        return 2*PI*radius*radius
+    
+    def volume(radius):
+        return (2/3)*PI*radius**3
+
+
+class Tetrahedron:
     pass
+
+
+class Parallelopiped:
+    pass
+
+
