@@ -38,7 +38,7 @@ if __name__ == "__main__":
         for i in range(w_dict["totalResults"]):
             headline = w_dict["articles"][i]["title"]
             print(f"{headline}\nDo you wish to ellaborate on the headline?")
-            x = int(input("Enter 1 for yes and 2 for no.\nEnter 0 to go back.\n"))
+            x = int(input("Enter 1 for yes.\nEnter 2 for no.\nEnter 0 to go back.\n"))
             if x == 1:
                 openai.api_key = "sk-proj-9ALXEfVlHrzLDTSLiv6MT3BlbkFJldgCEgAS5kHcL45Qd7Ev"
                 content = w_dict["articles"][i]["url"]
